@@ -42,9 +42,9 @@ jobs:
         appimage-builder --recipe ${{ github.workspace }}/util/appimage/stellarium-appimage-x86_64.yml --skip-test
         cp ${{ github.workspace }}/builds/appimage/*.AppImage ${{ github.workspace }}/artifact
 
-   - name: Upload AppImage
-   uses: actions/upload-artifact@v2
-   if: success()
-   with:
-     name: 'Stellarium-edge-x86_64'
-     path: ${{ github.workspace }}/artifact/*.AppImage
+    - name: Upload AppImage
+      uses: actions/upload-artifact@v2
+      if: success()
+      with:
+       name: 'Stellarium-edge-x86_64'
+       path: ${{ github.workspace }}/artifact/*.AppImage
